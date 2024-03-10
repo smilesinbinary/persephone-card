@@ -1,0 +1,114 @@
+/* Reset Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Main Styles */
+
+body {
+  background: rgb(252,138,58);
+  background: linear-gradient(90deg, rgba(252,138,58,1) 0%, rgba(65,90,71,1) 49%, rgba(119,145,114,1) 100%);
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url(../img/grid-bg.png);
+  background-size: cover;
+}
+
+/* Card Styles & Rotation */
+
+#flip-card {
+  width: 35em;
+  height: 42em;
+}
+
+#flip-card-inner {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+#flip-card:hover #flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+#flip-card-front, #flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+#back {
+  background-color: #fff;
+}
+
+#card-heading {
+  padding-top: 9.1em;
+  padding-left: 0.2em;
+  font-family: "Marck Script", cursive;
+  font-size: 4em;
+  color: #FC8A3A;
+  text-shadow: #000 1px 0 10px;
+}
+
+#flip-card-front {
+  background-image: url(../img/persephone.jpg);
+  border-radius: 2em;
+  border: 8px solid #fff;
+}
+
+#flip-card-back {
+  background-color: #415A47;
+  border-radius: 2em;
+  border: 8px solid #fff;
+  transform: rotateY(180deg);
+  color: #fff;
+  font-family: "Noto Serif KR", serif;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#back-heading {
+  font-family: "Marck Script", cursive;
+  font-size: 4em;
+}
+
+.flip-card-back h1, h2, h3 {
+  padding-bottom: 0.2em;
+}
+
+@media only screen and (max-width: 600px) {
+  #flip-card {
+    width: 20em;
+    height: 35em;
+  }
+
+  #card-heading {
+    padding-top: 6em;
+  }
+
+  #flip-card-front {
+    background-position: center;
+  }
+}
